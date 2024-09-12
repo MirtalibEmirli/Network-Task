@@ -3,9 +3,9 @@ Microsoft Visual Studio Solution File, Format Version 12.00
 # Visual Studio Version 17
 VisualStudioVersion = 17.9.34723.18
 MinimumVisualStudioVersion = 10.0.40219.1
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Network Task", "Network Task\Network Task.csproj", "{4A07BE30-2F33-4D52-854A-3CAC187DE15C}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "SERVERR", "Network Task\SERVERR.csproj", "{4A07BE30-2F33-4D52-854A-3CAC187DE15C}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Client", "Client\Client.csproj", "{22ECBC39-5308-49EF-B138-C482E6C8E873}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Client", "Client\Client.csproj", "{22ECBC39-5308-49EF-B138-C482E6C8E873}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution

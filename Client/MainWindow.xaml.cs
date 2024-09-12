@@ -30,12 +30,21 @@ namespace Client
             {
                 sourcePath = openFileDialog.FileName;
             }
+            Application.Current.Dispatcher.Invoke(() =>
+            {
+
+                MessageBox.Show("Image Selected");
+            });
         }
         void send_Click(object sender, RoutedEventArgs e)
         {
             try
             {
-                MessageBox.Show("Sending started");
+                Application.Current.Dispatcher.Invoke(() =>
+                {
+
+                    MessageBox.Show("Sending started");
+                });
                 using (FileStream source = new FileStream(sourcePath, FileMode.Open, FileAccess.Read))
                 {
 
@@ -52,12 +61,10 @@ namespace Client
                         {
                             int len = 23;
                             var bytes = new byte[len];
-                            var fileSize = source.Length;
                             do
                             {
-                                len = source.Read(bytes, 0, len);
-                                fileSize -= len;
-                                networkStream.Write(bytes);
+                                 source.Read(bytes, 0, len);
+                                 networkStream.Write(bytes);
 
                             } while (len > 0);
 
@@ -68,12 +75,29 @@ namespace Client
 
                         catch (Exception ex)
                         {
-                            MessageBox.Show(ex.Message);
+                            Application.Current.Dispatcher.Invoke(() =>
+                            {
+
+                                MessageBox.Show(ex.Message);
+
+                            });
+                        }
+                        finally
+                        {
+                            Application.Current.Dispatcher.Invoke(() =>
+                            {
+
+                                MessageBox.Show("Sending finished" );
+                            });
                         }
                     }
                     else
                     {
-                        MessageBox.Show("Client cant connectt");
+                        Application.Current.Dispatcher.Invoke(() =>
+                        {
+
+                            MessageBox.Show("Client cant connectt");
+                        });
                     }
 
 
