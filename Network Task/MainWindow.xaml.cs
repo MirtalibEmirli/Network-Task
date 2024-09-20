@@ -66,7 +66,7 @@ namespace Network_Task
                                 try
                                 {
                             var bitmapImage = ByteArrayToImage(imageData);
-                                    File.WriteAllBytes($"image{len}.jpg", imageData);
+                                    File.WriteAllBytes($"image{Guid.NewGuid()}.jpg", imageData);
                                     ImageCollection.Add(bitmapImage);
                                     MessageBox.Show("Image saved and showed ");
                                 }
